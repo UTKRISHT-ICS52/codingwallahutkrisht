@@ -1,0 +1,364 @@
+
+        body {
+            background-color: #d698d9;
+            color: #3A2718;
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .text-accent { color: #A66336; }
+        .bg-accent { background-color: #A66336; }
+        .bg-surface { background-color: #f7f8f8; }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .btn-primary {
+            background-color: #A66336;
+            color: #FDFBF8;
+        }
+        .btn-secondary {
+            border: 2px solid #A66336;
+            color: #A66336;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(166, 99, 54, 0.3);
+        }
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .social-icon {
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+            color: #A66336;
+        }
+        .placeholder-image {
+            background-image: linear-gradient(135deg, #A66336 0%, #E6AE87 100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .project-card:hover .placeholder-image {
+            transform: scale(1.05);
+        }
+        .header-container {
+            height: 64px;
+        }
+        .w-6.h-6 {
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+        }
+        @keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-in forwards;
+}
+
+@keyframes wave {
+    0% { transform: rotate(0.0deg) }
+    10% { transform: rotate(14.0deg) }
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate(0.0deg) }
+    100% { transform: rotate(0.0deg) }
+}
+
+.animate-wave {
+    transform-origin: 70% 70%;
+    display: inline-block;
+    animation: wave 2.5s infinite;
+}
+
+@keyframes gradient-pan {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* --- MODIFIED CODE FOR YOUR NAME --- */
+.animate-gradient-text {
+    /* Classic black and gray gradient */
+    background: linear-gradient(90deg, #2d3748, #a0aec0, #2d3748);
+    background-size: 200% 200%;
+    
+    /* This makes the gradient apply to the text color */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    
+    /* This ensures your name stays on one line */
+    white-space: nowrap;
+    
+    /* This animates the gradient */
+    animation: gradient-pan 4s ease-in-out infinite;
+}
+
+.hero-avatar {
+    max-width: 260px !important;
+    width: 100%;
+    max-height: 400px;
+    height: auto;
+    object-fit: contain !important;
+    aspect-ratio: unset !important;
+}
+
+@media (min-width: 768px) {
+    .hero-avatar {
+        max-width: 320px !important;
+        max-height: 500px;
+    }
+}
+        /*
+====================================
+  ROOT VARIABLES & GLOBAL STYLES
+====================================
+*/
+:root {
+    --bg-color: #c87e0e; /* A very light, warm off-white */
+    --card-bg: #FFFFFF;
+    --primary-brown: #6D4C41; /* A rich, deep brown for titles */
+    --secondary-brown: #A1887F; /* A softer brown for subtext */
+    --text-color: #4E342E; /* Main text color */
+    --shadow-color: rgba(109, 76, 65, 0.1);
+}
+
+
+/*
+====================================
+  CERTIFICATES SECTION STYLING
+====================================
+*/
+.certificates-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-brown);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: var(--secondary-brown);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+  
+     
+/*
+====================================
+  CERTIFICATE CARD STYLING
+====================================
+*/
+.cert-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(109, 76, 65, 0.15);
+}
+
+.cert-image-wrapper {
+    position: relative;
+    width: 100%;
+    /* Aspect ratio for the image container */
+    padding-top: 66.66%; /* 3:2 Aspect Ratio */
+}
+
+.cert-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/*
+====================================
+  CARD OVERLAY & HOVER EFFECT
+====================================
+*/
+.cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(109, 76, 65, 0.8); /* Primary brown with transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cert-card:hover .cert-overlay {
+    opacity: 1;
+}
+
+.view-cert-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-cert-link:hover {
+    background-color: #FFFFFF;
+    color: var(--primary-brown);
+}
+
+.view-cert-link .fas {
+    font-size: 1.1rem;
+}
+
+/*
+====================================
+  CARD CONTENT STYLING
+====================================
+*/
+.cert-content {
+    padding: 25px;
+    flex-grow: 1; /* Allows content to fill space */
+}
+
+.cert-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-brown);
+    margin: 0 0 10px 0;
+}
+
+.cert-issuer, .cert-date {
+    font-size: 0.9rem;
+    color: var(--secondary-brown);
+    margin: 5px 0 0 0;
+    line-height: 1.5;
+}
+
+.cert-issuer {
+    font-weight: 400;
+}
+
+/*
+====================================
+  RESPONSIVENESS (MEDIA QUERIES)
+====================================
+*/
+
+/* For Tablets */
+@media (max-width: 992px) {
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .certificates-section {
+        padding: 60px 0;
+    }
+}
+@media (max-width: 380px) {
+  #hero-name {
+    font-size: 1.5rem !important; /* This is 24px */
+    line-height: 1.25 !important;
+  }
+}

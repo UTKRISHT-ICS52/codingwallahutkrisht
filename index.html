@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codewithutkrisht</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-opacity-80 backdrop-blur-md transition-all duration-300 text-gray-800">
+        <nav class="container mx-auto px-6 py-2 flex justify-between items-center header-container">
+            <a href="#home" class="text-xl font-bold text-gray-800">CODEWITHUTKRISHT</a>
+            
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="#home" class="text-gray-600 hover:text-accent transition-colors">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-accent transition-colors">About</a>
+                <a href="#work" class="text-gray-600 hover:text-accent transition-colors">My Work</a>
+                <a href="#certificates" class="text-gray-600 hover:text-accent transition-colors">Certifications</a>
+                <button id="open-contact-modal" class="btn btn-secondary !py-1 !px-3">Contact</button>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/UTKRISHT-ICS52" target="_blank" class="text-gray-600 hover:text-accent social-icon">
+                        <img src="github.jpg" alt="GitHub" class="w-6 h-6">
+                    </a>
+                    <a href="https://x.com/patel_utkr11561?t=UWxyXFAz0pntbEq_QECalw&s=09" target="_blank" class="text-gray-600 hover:text-accent social-icon">
+                        <img src="x.png" alt="X" class="w-6 h-6">
+                    </a>
+                    <a href="https://www.instagram.com/codewithutkrisht?igsh=Z2ZsYWF4OGY1ejgx" target="_blank" class="text-gray-600 hover:text-accent social-icon">
+                        <img src="instagram.jpg" alt="Instagram" class="w-6 h-6">
+                    </a>
+                    <a href="https://www.linkedin.com/in/utkrisht-patel2007" target="_blank" class="text-gray-600 hover:text-accent social-icon">
+                       <img src="linkedin.jpg" alt="LinkedIn" class="w-6 h-6">
+                    </a>
+                </div>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-surface">
+            <a href="#home" class="block py-2 px-6 text-gray-600 hover:bg-gray-200">Home</a>
+            <a href="#about" class="block py-2 px-6 text-gray-600 hover:bg-gray-200">About</a>
+            <a href="#work" class="block py-2 px-6 text-gray-600 hover:bg-gray-200">Work</a>
+             <a href="#certificates" class="block py-2 px-6 text-gray-600 hover:bg-gray-200">Certifications</a>
+            <button id="open-contact-modal-mobile" class="block w-full text-left py-2 px-6 text-gray-600 hover:bg-gray-200">Contact</button>
+            <div class="flex justify-center space-x-6 py-4">
+                <a href="https://github.com/UTKRISHT-ICS52" target="_blank" class="text-gray-600 hover:text-accent social-icon">
+                    <img src="github.jpg" alt="GitHub" class="w-6 h-6">
+                </a>
+                <a href="https://x.com/patel_utkr11561?t=UWxyXFAz0pntbEq_QECalw&s=09" target="_blank" class="text-gray-600 hover:text-accent social-icon">
+                    <img src="x.png" alt="X" class="w-6 h-6">
+                </a>
+                <a href="https://www.instagram.com/codewithutkrisht?igsh=Z2ZsYWF4OGY1ejgx" target="_blank" class="text-gray-600 hover:text-accent social-icon">
+                    <img src="instagram.jpg" alt="Instagram" class="w-6 h-6">
+                </a>
+                <a href="https://www.linkedin.com/in/utkrisht-patel2007" target="_blank" class="social-icon">
+                   <img src="linkedin.jpg" alt="LinkedIn" class="w-6 h-6">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+          <!-- Hero Section -->
+       <section id="home" class="relative min-h-screen flex items-center justify-center bg-white overflow-hidden py-20 px-4">
+    <div class="container mx-auto flex flex-col md:flex-row gap-12 items-center">
+        
+        <div class="flex-shrink-0 flex justify-center md:justify-start animate-fade-in" style="animation-delay: 0.4s;">
+            <img src="mainp.jpg" alt="Animated Portrait" class="w-full max-w-sm object-cover rounded-2xl shadow-xl ring-4 ring-stone-200/70 transition-transform duration-300 ease-in-out transform hover:scale-105">
+        </div>
+
+        <div class="w-full md:w-auto text-center md:text-left animate-fade-in-up md:ml-8 flex flex-col justify-center">
+            
+            <div class="flex items-center justify-center md:justify-start mb-2">
+                <span class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-800 leading-tight mr-2" style="font-family: 'Poppins', 'Inter', sans-serif;">
+                    Hi
+                </span>
+                <span role="img" aria-label="waving hand" class="inline-block animate-wave text-4xl sm:text-5xl lg:text-6xl mx-2">👋</span>
+                <span class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-800 leading-tight" style="font-family: 'Poppins', 'Inter', sans-serif;">
+                    I am
+                </span>
+            </div>
+
+            <h1 class="text-2xl leading-tight sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-stone-800 mb-4 break-words" style="font-family: 'Poppins', 'Inter', sans-serif;">
+                <span class="animate-gradient-text">
+                    Utkrisht Patel  (Software Developer) 
+                </span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-stone-600 font-medium mt-6 mb-10 animate-fade-in-up" style="animation-delay: 0.3s;">
+                Startup Builder 
+                <span class="text-stone-400 mx-2">|</span>
+                 Full Stack Developer
+            </p>
+            
+            <div class="flex justify-center md:justify-start gap-4 animate-fade-in-up" style="animation-delay: 0.5s;">
+                <a href="#contact" class="px-8 py-3 font-semibold rounded-lg bg-stone-800 text-white transition-all duration-300 ease-in-out hover:bg-stone-700 hover:-translate-y-1 shadow-md">
+                    Book a Discovery Call
+                </a>
+                <a href="#work" class="px-8 py-3 font-semibold rounded-lg bg-transparent text-stone-800 border-2 border-stone-700 transition-all duration-300 ease-in-out hover:bg-stone-100 hover:-translate-y-1">
+                    See my work
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32 section-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-surface p-8 rounded-lg shadow-md mb-8">
+                        <p id="about-bio" class="text-gray-700 mb-6 leading-relaxed">With 2+ years of hackathon experience — including a win at PACS'24 , SMARTEARTH'25 (finalist) — and a track record as a startup builder, I’m building my career as a Full Stack Developer, A DSA enthusiast in C++, I excel in both collaborative and independent projects, crafting responsive, user-friendly web interfaces. Passionate about turning ideas into impactful tech solutions, I’m eager to grow in a dynamic, forward-thinking environment.</p>
+                    </div>
+
+                    <div class="bg-surface p-8 rounded-lg shadow-md mb-8">
+                        <h4 class="text-xl font-bold text-accent mb-4">Core Areas I’m Focused On</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><span class="font-bold">📘 DSA with C++</span> – Practicing consistently to build strong problem-solving skills</li>
+                            <li><span class="font-bold">🎨 Frontend Development</span> – HTML, CSS, JavaScript, React.js</li>
+                            <li><span class="font-bold">⚙ Backend Development</span> – Node.js, Express.js, MongoDB</li>
+                            <li><span class="font-bold">🌍 Open Source Contributor</span> – Collaborating on real-world projects, learning by doing</li>
+                            <li><span class="font-bold">🛠 Version Control & Productivity</span> – Git, GitHub, GitLab, Docker, CI/CD, MS Office (Word, Excel, PPT)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-surface p-8 rounded-lg shadow-md mb-8">
+                        <h4 class="text-xl font-bold text-accent mb-4">Core CS Subjects I’m Exploring</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><span class="font-bold">🧩 Object-Oriented Programming in C++</span></li>
+                            <li><span class="font-bold">🗄 Database Management Systems</span></li>
+                            <li><span class="font-bold">💻 Operating Systems</span></li>
+                            <li><span class="font-bold">🌐 Computer Networks</span></li>
+                            <li><span class="font-bold">🏗 System Design</span> – Understanding how systems are designed from the ground up</li>
+                        </ul>
+                    </div>
+
+                    
+                    
+                    <h4 class="text-xl font-bold mt-8 mb-4">Skills</h4>
+                    <div id="about-skills" class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">MERN Stack</span>
+                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">Front-End Development</span>
+                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">DSA</span>
+                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">Problem Solving</span>
+                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">C++</span>
+                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">Java</span>
+                         <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">HTML</span>
+                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">CSS (Cascading Style Sheets)</span>
+                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">JavaScript</span>
+                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">Microsoft Office tools:Word,Excel,PowerPoint</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+             <!-- Work Section -->
+        <section id="work" class="py-20 md:py-32 bg-surface section-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Work</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-white rounded-xl overflow-hidden group transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 relative cursor-pointer shadow-md border border-gray-200">
+                      <div class="relative h-56 overflow-hidden">
+                        <img src="Screenshot 2025-05-26 132859.png" alt="Portfolio Website Screenshot" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-accent/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                          <span class="text-white text-lg font-bold animate-pulse">View Case Study</span>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-all duration-500">
+                          <i class="fa-solid fa-arrow-up-right-from-square text-accent text-xl animate-bounce"></i>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent transition-colors duration-300">Portfolio Website</h3>
+                        <p class="text-sm text-accent mb-3 flex items-center gap-2">
+                          <i class="fa-brands fa-html5 text-orange-500"></i>
+                          <i class="fa-brands fa-css3-alt text-blue-500"></i>
+                          <i class="fa-brands fa-js text-yellow-400"></i>
+                          HTML | CSS | JavaScript
+                        </p>
+                        <p class="text-gray-600 mb-3">A showcase of my skills in web development.</p>
+                        <a href="https://utkrisht.ct.ws/" target="_blank" class="inline-block mt-2 px-4 py-2 bg-accent text-white rounded-full font-semibold shadow hover:bg-accent/90 transition-colors duration-300 animate-fade-in-up">Visit Portfolio</a>
+                      </div>
+                    </div>
+                   </div>
+            </div>
+       
+
+         <div class="container mx-auto px-6">
+               <!--<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Work</h2>-->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-white rounded-xl overflow-hidden group transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 relative cursor-pointer shadow-md border border-gray-200">
+                      <div class="relative h-56 overflow-hidden">
+                        <img src="Screenshot 2025-08-03 163537.png" alt="Portfolio Website Screenshot" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-accent/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                          <span class="text-white text-lg font-bold animate-pulse">View Case Study</span>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-all duration-500">
+                          <i class="fa-solid fa-arrow-up-right-from-square text-accent text-xl animate-bounce"></i>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent transition-colors duration-300">Educational Plateform </h3>
+                        <p class="text-sm text-accent mb-3 flex items-center gap-2">
+                          <i class="fa-brands fa-html5 text-orange-500"></i>
+                          <i class="fa-brands fa-css3-alt text-blue-500"></i>
+                          <i class="fa-brands fa-js text-yellow-400"></i>
+                          React | Node.js | SQL | Tailwind CSS | Google API 
+                        </p>
+                        <p class="text-gray-600 mb-3">A showcase of my skills in web development.</p>
+                        <a href="https://greadesystem.edu.com/" target="_blank" class="inline-block mt-2 px-4 py-2 bg-accent text-white rounded-full font-semibold shadow hover:bg-accent/90 transition-colors duration-300 animate-fade-in-up">Visit Education Plateform</a>
+                      </div>
+                    </div>
+                   </div>
+            </div>
+
+            <div class="container mx-auto px-6">
+               <!--<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Work</h2>-->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-white rounded-xl overflow-hidden group transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 relative cursor-pointer shadow-md border border-gray-200">
+                      <div class="relative h-56 overflow-hidden">
+                        <img src="Screenshot 2025-05-25 114341.png" alt="Portfolio Website Screenshot" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-accent/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                          <span class="text-white text-lg font-bold animate-pulse">View Case Study</span>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-all duration-500">
+                          <i class="fa-solid fa-arrow-up-right-from-square text-accent text-xl animate-bounce"></i>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent transition-colors duration-300">Zomato Website</h3>
+                        <p class="text-sm text-accent mb-3 flex items-center gap-2">
+                          <i class="fa-brands fa-html5 text-orange-500"></i>
+                          <i class="fa-brands fa-css3-alt text-blue-500"></i>
+                          <i class="fa-brands fa-js text-yellow-400"></i>
+                          HTML | CSS | JavaScript | 
+                        </p>
+                        <p class="text-gray-600 mb-3">A showcase of my skills in web development.</p>
+                        <a href="https://projectutkrisht.netlify.app/" target="_blank" class="inline-block mt-2 px-4 py-2 bg-accent text-white rounded-full font-semibold shadow hover:bg-accent/90 transition-colors duration-300 animate-fade-in-up">Visit Zomato Website </a>
+                      </div>
+                    </div>
+                   </div>
+            </div>
+        
+        <div class="container mx-auto px-6">
+               <!--<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Work</h2>-->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-white rounded-xl overflow-hidden group transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 relative cursor-pointer shadow-md border border-gray-200">
+                      <div class="relative h-56 overflow-hidden">
+                        <img src="Screenshot 2025-05-25 113803.png" alt="Portfolio Website Screenshot" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-accent/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                          <span class="text-white text-lg font-bold animate-pulse">View Case Study</span>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-all duration-500">
+                          <i class="fa-solid fa-arrow-up-right-from-square text-accent text-xl animate-bounce"></i>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent transition-colors duration-300">Netflix Website </h3>
+                        <p class="text-sm text-accent mb-3 flex items-center gap-2">
+                          <i class="fa-brands fa-html5 text-orange-500"></i>
+                          <i class="fa-brands fa-css3-alt text-blue-500"></i>
+                          <i class="fa-brands fa-js text-yellow-400"></i>
+                          HTML | CSS | JavaScript | 
+                        </p>
+                        <p class="text-gray-600 mb-3">A showcase of my skills in web development.</p>
+                        <a href="https://codewithutkrisht.netlify.app/" target="_blank" class="inline-block mt-2 px-4 py-2 bg-accent text-white rounded-full font-semibold shadow hover:bg-accent/90 transition-colors duration-300 animate-fade-in-up">Visit Netflix Website </a>
+                      </div>
+                    </div>
+                   </div>
+            </div>
+
+            <div class="container mx-auto px-6">
+               <!--<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Work</h2>-->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-white rounded-xl overflow-hidden group transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 relative cursor-pointer shadow-md border border-gray-200">
+                      <div class="relative h-56 overflow-hidden">
+                        <img src="Screenshot 2025-05-25 115002.png" alt="Portfolio Website Screenshot" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-accent/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                          <span class="text-white text-lg font-bold animate-pulse">View Case Study</span>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-all duration-500">
+                          <i class="fa-solid fa-arrow-up-right-from-square text-accent text-xl animate-bounce"></i>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent transition-colors duration-300">Amazon Website </h3>
+                        <p class="text-sm text-accent mb-3 flex items-center gap-2">
+                          <i class="fa-brands fa-html5 text-orange-500"></i>
+                          <i class="fa-brands fa-css3-alt text-blue-500"></i>
+                          <i class="fa-brands fa-js text-yellow-400"></i>
+                          HTML | CSS | JavaScript | 
+                        </p>
+                        <p class="text-gray-600 mb-3">A showcase of my skills in web development.</p>
+                        <a href="https://amazoncodewithutkrisht.netlify.app/" target="_blank" class="inline-block mt-2 px-4 py-2 bg-accent text-white rounded-full font-semibold shadow hover:bg-accent/90 transition-colors duration-300 animate-fade-in-up">Visit Amazon Website </a>
+                      </div>
+                    </div>
+                   </div>
+            </div>
+
+             <div class="container mx-auto px-6">
+               <!--<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Work</h2>-->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-white rounded-xl overflow-hidden group transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 relative cursor-pointer shadow-md border border-gray-200">
+                      <div class="relative h-56 overflow-hidden">
+                        <img src="Screenshot 2025-08-02 193535.png" alt="Portfolio Website Screenshot" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-accent/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                          <span class="text-white text-lg font-bold animate-pulse">View Case Study</span>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-all duration-500">
+                          <i class="fa-solid fa-arrow-up-right-from-square text-accent text-xl animate-bounce"></i>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent transition-colors duration-300">Santosh International School Website </h3>
+                        <p class="text-sm text-accent mb-3 flex items-center gap-2">
+                          <i class="fa-brands fa-html5 text-orange-500"></i>
+                          <i class="fa-brands fa-css3-alt text-blue-500"></i>
+                          <i class="fa-brands fa-js text-yellow-400"></i>
+                          HTML | CSS | JavaScript | 
+                        </p>
+                        <p class="text-gray-600 mb-3">A showcase of my skills in web development.</p>
+                        <a href="" target="_blank" class="inline-block mt-2 px-4 py-2 bg-accent text-white rounded-full font-semibold shadow hover:bg-accent/90 transition-colors duration-300 animate-fade-in-up">Visit Santosh International School Website </a>
+                      </div>
+                    </div>
+                   </div>
+            </div>
+
+             <div class="container mx-auto px-6">
+               <!--<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Work</h2>-->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-white rounded-xl overflow-hidden group transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 relative cursor-pointer shadow-md border border-gray-200">
+                      <div class="relative h-56 overflow-hidden">
+                        <img src="Screenshot 2025-04-17 180633.png" alt="Portfolio Website Screenshot" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-accent/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                          <span class="text-white text-lg font-bold animate-pulse">View Case Study</span>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-all duration-500">
+                          <i class="fa-solid fa-arrow-up-right-from-square text-accent text-xl animate-bounce"></i>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900 group-hover:text-accent transition-colors duration-300">Talk To Database AI  </h3>
+                        <p class="text-sm text-accent mb-3 flex items-center gap-2">
+                          <i class="fa-brands fa-html5 text-orange-500"></i>
+                          <i class="fa-brands fa-css3-alt text-blue-500"></i>
+                          <i class="fa-brands fa-js text-yellow-400"></i>
+                        React | TailwindCSS | SQL | Google Gemini API
+                        </p>
+                        <p class="text-gray-600 mb-3">A showcase of my skills in web development.</p>
+                        <a href="" target="_blank" class="inline-block mt-2 px-4 py-2 bg-accent text-white rounded-full font-semibold shadow hover:bg-accent/90 transition-colors duration-300 animate-fade-in-up">Visit Talk To Database AI  </a>
+                      </div>
+                    </div>
+                   </div>
+            </div>
+
+
+        </section>
+        <!-- My certificates -->
+        <section id="certificates" class="certificates-section">
+            <div class="container">
+                <h2 class="section-title">Certifications & Achievements</h2>
+                <div class="certificates-grid">
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="Abhivyanjana .jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Abhivyanjana Hackathon – Finalist</h3>
+                            <p class="cert-issuer">Issued by: HackFed & TCC Gautam Buddha University (GBU)</p>
+                            <p class="cert-date">Issued: November 22, 2024 </p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="Ignition hack .jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Ignition Hackathon – Finalist</h3>
+                            <p class="cert-issuer">Issued by: Gautam Buddha University (GBU)</p>
+                            <p class="cert-date">Issued: April 13, 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="smartearth hackathon .jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">SmartEarth Hackathon - Finalist</h3>
+                            <p class="cert-issuer">Issued by: Center of Excellence in Medical Robotics and Research,Nazarbayev University Kazakhstan and Compucom Institute of Technology & Managment, India.</p>
+                            <p class="cert-date">Issued: 23 June, 2025</p>
+                        </div>
+                    </div>
+
+                 <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="Science poster .jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Science Poster Competition</h3>
+                            <p class="cert-issuer">Issued by: Department of Vocational Studies , Gautam Buddha University(GBU)</p>
+                            <p class="cert-date">Issued: February 28, 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="cryptic hunt .jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Cryptic Hunt Competition</h3>
+                            <p class="cert-issuer">Issued by: Hackfeb Community & Techno Cultural Club GBU .</p>
+                            <p class="cert-date">Issued: February 17, 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="web3.jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Career in Web3 Workshop</h3>
+                            <p class="cert-issuer">Issued by: Ascent Circle , Chandigarh University </p>
+                            <p class="cert-date">Issued: June 18, 2025</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="Robotics.jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Robotics Workshop</h3>
+                            <p class="cert-issuer">Issued by: Ascent Circle , Chandigarh University </p>
+                            <p class="cert-date">Issued: July 12, 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="PACS hackthon .jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title"> PACS Hackathon </h3>
+                            <p class="cert-issuer">Issued by: Unstop</p>
+                            <p class="cert-date">Issued: Nov 20, 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="Quiz .jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Nation Building Case Competition</h3>
+                            <p class="cert-issuer">Issued by: Nation Building , Unstop</p>
+                            <p class="cert-date">Issued: January 05, 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="Master UI.jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Masterclass On Mastering UI/UX:Real-World Solution Program.</h3>
+                            <p class="cert-issuer">Issued by: Physics Wallah (PW)</p>
+                            <p class="cert-date">Issued: December 28, 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="hp.jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Data Science & Analytics</h3>
+                            <p class="cert-issuer">Issued by: HP Foundation </p>
+                            <p class="cert-date">Issued: November 12, 2024/p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="Code Day.jpg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-content">
+                            <h3 class="cert-title">Code Day (IIT DELHI)</h3>
+                            <p class="cert-issuer">Issued by: Indian Institute of Technology Delhi</p>
+                            <p class="cert-date">Issued: September  30, 2024</p>
+                        </div>
+                    </div>
+                    
+                
+
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 bg-surface section-hidden">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's build something great together.</h2>
+                    <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Have a project in mind or just want to say hi? Feel free to reach out.</p>
+                </div>
+                <div class="max-w-xl mx-auto">
+                    <form id="contact-form" class="space-y-6">
+                        <input type="text" name="name" placeholder="Your Name" class="w-full bg-gray-100 border-2 border-gray-300 rounded-lg p-3 focus:border-accent outline-none transition-colors text-gray-800" required>
+                        <input type="email" name="email" placeholder="Your Email" class="w-full bg-gray-100 border-2 border-gray-300 rounded-lg p-3 focus:border-accent outline-none transition-colors text-gray-800" required>
+                        <textarea name="message" placeholder="Your Message" rows="5" class="w-full bg-gray-100 border-2 border-gray-300 rounded-lg p-3 focus:border-accent outline-none transition-colors text-gray-800" required></textarea>
+                        <button type="submit" class="btn btn-primary w-full">Send Message</button>
+                    </form>
+                    <div id="form-status" class="mt-4 text-center"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4 text-gray-600">
+                <a href="https://github.com/UTKRISHT-ICS52" target="_blank" class="social-icon">GitHub</a>
+                <a href="https://x.com/patel_utkr11561?t=UWxyXFAz0pntbEq_QECalw&s=09" target="_blank" class="social-icon">X</a>
+                <a href="https://www.instagram.com/codewithutkrisht?igsh=Z2ZsYWF4OGY1ejgx" target="_blank" class="social-icon">Instagram</a>
+                <a href="https://www.linkedin.com/in/utkrisht-patel2007" target="_blank" class="social-icon">LinkedIn</a>
+            </div>
+            <p>&copy; 2025 CODEWITHUTKRISHT. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[100] transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div class="bg-surface p-8 rounded-lg shadow-2xl relative max-w-xl w-full mx-4 transform scale-95 transition-transform duration-300">
+            <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-2">Let's Connect</h3>
+                <p class="text-gray-600 mb-6">Fill out the form below or find me on my socials.</p>
+                <form id="modal-contact-form" class="space-y-4">
+                    <input type="text" name="name" placeholder="Your Name" class="w-full bg-gray-100 border-2 border-gray-300 rounded-lg p-3 focus:border-accent outline-none transition-colors text-gray-800" required>
+                    <input type="email" name="email" placeholder="Your Email" class="w-full bg-gray-100 border-2 border-gray-300 rounded-lg p-3 focus:border-accent outline-none transition-colors text-gray-800" required>
+                    <textarea name="message" placeholder="Your Message" rows="4" class="w-full bg-gray-100 border-2 border-gray-300 rounded-lg p-3 focus:border-accent outline-none transition-colors text-gray-800" required></textarea>
+                    <button type="submit" class="btn btn-primary w-full">Send Message</button>
+                </form>
+                <div id="modal-form-status" class="mt-4 text-center"></div>
+            </div>
+        </div>
+    </div>
+        <!-- Contact Modal -->
+
+    <button id="scroll-to-top" class="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
+    </button>
+</body>
+</html>
