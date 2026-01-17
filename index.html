@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body class="antialiased">
+<body class="antialiased">   
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-opacity-80 backdrop-blur-md transition-all duration-300 text-gray-800">
         <nav class="container mx-auto px-6 py-2 flex justify-between items-center header-container">
@@ -82,6 +82,9 @@
         <div class="w-full md:w-auto text-center md:text-left animate-fade-in-up md:ml-8 flex flex-col justify-center">
             
             <div class="flex items-center justify-center md:justify-start mb-2">
+              
+                    
+
                 <span class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-800 leading-tight mr-2" style="font-family: 'Poppins', 'Inter', sans-serif;">
                     Hi
                 </span>
@@ -98,10 +101,11 @@
             </h1>
             
             <p class="text-lg md:text-xl text-stone-600 font-medium mt-6 mb-10 animate-fade-in-up" style="animation-delay: 0.3s;">
-                Startup Builder 
+                Researcher 
                 <span class="text-stone-400 mx-2">|</span>
                  Full Stack Developer
             </p>
+            
             
             <div class="flex justify-center md:justify-start gap-4 animate-fade-in-up" style="animation-delay: 0.5s;">
                 <a href="#contact" class="px-8 py-3 font-semibold rounded-lg bg-stone-800 text-white transition-all duration-300 ease-in-out hover:bg-stone-700 hover:-translate-y-1 shadow-md">
@@ -120,13 +124,19 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
                 <div class="max-w-3xl mx-auto">
                     <div class="bg-surface p-8 rounded-lg shadow-md mb-8">
-                        <p id="about-bio" class="text-gray-700 mb-6 leading-relaxed">With 2+ years of hackathon experience — including a win at PACS'24 , SMARTEARTH'25 (finalist) — and a track record as a startup builder, I’m building my career as a Full Stack Developer, A DSA enthusiast in C++, I excel in both collaborative and independent projects, crafting responsive, user-friendly web interfaces. Passionate about turning ideas into impactful tech solutions, I’m eager to grow in a dynamic, forward-thinking environment.</p>
+                        <p id="about-bio" class="text-gray-700 mb-6 leading-relaxed">With 2+ years of hackathon experience — including a win at PACS'24 , SMARTEARTH'25 (finalist) — and a track record as a startup builder, I’m building my career as a Full Stack Developer, A DSA enthusiast in C++, I excel in both collaborative and independent projects, crafting responsive, user-friendly web interfaces. Passionate about turning ideas into impactful tech solutions, I’m eager to grow in a dynamic, forward-thinking environment.</p> <p> I have worked as an Undergraduate Researcher in IoT (sensor-based systems) and Machine Learning, with published research paper focused on solving real-world problems.
+
+I have a solid foundation in Data Structures & Algorithms (Java) and hands-on experience as a Full-Stack Java Developer, where I actively build and optimize projects with an emphasis on clean code, performance, and backend architecture.
+
+I contribute to the developer community as a Mentor at Social Code’25 and a Contributor at GSSoC’25, collaborating in open-source environments and supporting peers through code reviews and technical guidance.
+
+I have competed in multiple hackathons and was recognized as a Hackathon Winner (PACS’24) and Finalist at SmartEarth’25 (Kazakhstan), gaining experience in team-based problem solving, rapid prototyping, and technical decision-making.</p>
                     </div>
 
                     <div class="bg-surface p-8 rounded-lg shadow-md mb-8">
-                        <h4 class="text-xl font-bold text-accent mb-4">Core Areas I’m Focused On</h4>
+                        <h4 class="text-xl font-bold text-accent mb-4"> 2+ Year Experience in Core Areas </h4>
                         <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li><span class="font-bold">📘 DSA with C++</span> – Practicing consistently to build strong problem-solving skills</li>
+                            <li><span class="font-bold">📘 DSA with Java</span> – Practicing consistently to build strong problem-solving skills</li>
                             <li><span class="font-bold">🎨 Frontend Development</span> – HTML, CSS, JavaScript, React.js</li>
                             <li><span class="font-bold">⚙ Backend Development</span> – Node.js, Express.js, MongoDB</li>
                             <li><span class="font-bold">🌍 Open Source Contributor</span> – Collaborating on real-world projects, learning by doing</li>
@@ -135,7 +145,17 @@
                     </div>
 
                     <div class="bg-surface p-8 rounded-lg shadow-md mb-8">
-                        <h4 class="text-xl font-bold text-accent mb-4">Core CS Subjects I’m Exploring</h4>
+                        <h4 class="text-xl font-bold text-accent mb-4"> Research Areas </h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><span class="font-bold"> Reinforcement Learning</span> – Smart Agriculture & Cloud Integration System</li>
+                            <li><span class="font-bold">Machine Learning</span> – Experience in Algorithms</li>
+                            <li><span class="font-bold">Internet of Things</span> – Developed Multi-Sensors and devices</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="bg-surface p-8 rounded-lg shadow-md mb-8">
+                        <h4 class="text-xl font-bold text-accent mb-4">Experience in Core Subjects</h4>
                         <ul class="list-disc list-inside space-y-2 text-gray-700">
                             <li><span class="font-bold">🧩 Object-Oriented Programming in C++</span></li>
                             <li><span class="font-bold">🗄 Database Management Systems</span></li>
@@ -144,12 +164,9 @@
                             <li><span class="font-bold">🏗 System Design</span> – Understanding how systems are designed from the ground up</li>
                         </ul>
                     </div>
-
-                    
-                    
                     <h4 class="text-xl font-bold mt-8 mb-4">Skills</h4>
                     <div id="about-skills" class="flex flex-wrap gap-2 mb-8">
-                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">MERN Stack</span>
+                        <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300"> Full Stack Developer</span>
                         <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">Front-End Development</span>
                         <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">DSA</span>
                         <span class="bg-surface text-accent px-3 py-1 rounded-full text-sm border border-gray-300">Problem Solving</span>
@@ -365,10 +382,27 @@
 
         </section>
         <!-- My certificates -->
+
         <section id="certificates" class="certificates-section">
             <div class="container">
                 <h2 class="section-title">Certifications & Achievements</h2>
                 <div class="certificates-grid">
+
+                    <div class="cert-card">
+                        <div class="cert-image-wrapper">
+                            <img src="Research Paper.jpeg" alt="Certificate Preview">
+                            <div class="cert-overlay">
+                                <a href="#" class="view-cert-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-eye"></i> View Certificate
+                                </a>
+                            </div>
+                        </div>  
+                        <div class="cert-content">  
+                            <h3 class="cert-title">Research Certificate </h3>
+                            <p class="cert-issuer">Issued by: Gautam Buddha University (GBU)</p>
+                            <p class="cert-date">Issued: December 24, 2025 </p> 
+                        </div>
+                    </div>
 
                     <div class="cert-card">
                         <div class="cert-image-wrapper">
@@ -594,7 +628,7 @@
                 <a href="https://www.instagram.com/codewithutkrisht?igsh=Z2ZsYWF4OGY1ejgx" target="_blank" class="social-icon">Instagram</a>
                 <a href="https://www.linkedin.com/in/utkrisht-patel2007" target="_blank" class="social-icon">LinkedIn</a>
             </div>
-            <p>&copy; 2025 CODEWITHUTKRISHT. All Rights Reserved.</p>
+            <p>&copy; @2026 CODEWITHUTKRISHT. All Rights Reserved.</p>
         </div>
     </footer>
     <!-- Contact Modal -->

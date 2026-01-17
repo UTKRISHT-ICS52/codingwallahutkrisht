@@ -1,6 +1,7 @@
 
         body {
-            background-color: #d698d9;
+            background-color: #e583ea;
+            
             color: #3A2718;
             font-family: 'Inter', sans-serif;
         }
@@ -20,6 +21,7 @@
         }
         .btn-primary {
             background-color: #A66336;
+            
             color: #FDFBF8;
         }
         .btn-secondary {
@@ -50,8 +52,10 @@
             color: #A66336;
         }
         .placeholder-image {
+
             background-image: linear-gradient(135deg, #A66336 0%, #E6AE87 100%);
             transition: transform 0.3s ease-in-out;
+            
         }
         .project-card:hover .placeholder-image {
             transform: scale(1.05);
