@@ -1,3 +1,4 @@
+alert("welcome to My Portfolio Website! Explore my projects, skills, and experience. Feel free to contact me for collaborations or opportunities. Enjoy your visit!");
 document.addEventListener('DOMContentLoaded', () => {
     // A helper function to safely add event listeners
     function safeAddEventListener(selector, event, handler) {
@@ -60,6 +61,52 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         }
     }
+
+
+    // contact.js
+// 1. INIT EmailJS (page load pe)
+emailjs.init("YOUR_PUBLIC_KEY"); // <-- apni Public Key
+
+// 2. Form submit handle
+const form = document.getElementById("contact-form");
+const btn = document.getElementById("send-btn");
+const status = document.getElementById("status-msg");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  btn.disabled = true;
+  btn.innerText = "Sending...";
+  status.innerText = "";
+
+  emailjs
+    .send("service_ytlee9l", "YOUR_TEMPLATE_ID", {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+    })
+    .then(
+      function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+
+        btn.innerText = "Send Message";
+        btn.disabled = false;
+
+        status.style.color = "green";
+        status.innerText = "✅ Message sent successfully!";
+        form.reset();
+      },
+      function (error) {
+        console.error("FAILED...", error);
+
+        btn.innerText = "Send Message";
+        btn.disabled = false;
+
+        status.style.color = "red";
+        status.innerText = "❌ Failed to send message";
+      }
+    );
+});
 
     // Safely add listeners for all buttons that open/close the modal
     safeAddEventListener('open-contact-modal', 'click', openModal);
