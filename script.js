@@ -1,4 +1,3 @@
-alert("welcome to My Portfolio Website! Explore my projects, skills, and experience. Feel free to contact me for collaborations or opportunities. Enjoy your visit!");
 document.addEventListener('DOMContentLoaded', () => {
     // A helper function to safely add event listeners
     function safeAddEventListener(selector, event, handler) {
