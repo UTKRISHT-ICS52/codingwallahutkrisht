@@ -1046,7 +1046,6 @@ Using IBM Qiskit 1.x </li>
         </section>
     </main>
 
-
     <!-- Footer -->
     <footer class="py-8">
         <div class="container mx-auto px-6 text-center text-gray-500">
@@ -1065,7 +1064,35 @@ Using IBM Qiskit 1.x </li>
     <button id="scroll-to-top" class="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 z-40">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
     </button>
+
+    <!-- Contact Modal -->
+<div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[100] transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-white p-8 rounded-lg shadow-2xl relative max-w-xl w-full mx-4">
+        <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="text-center">
+            <h3 class="text-2xl font-bold mb-2">Let's Connect</h3>
+            <p class="text-gray-600 mb-6">Fill out the form below or find me on my socials.</p>
+            <form id="modal-contact-form" class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" class="w-full bg-gray-100 border-2 border-gray-300 rounded-lg p-3 focus:border-accent outline-none transition-colors text-gray-800" required>
+                <input type="email" name="email" placeholder="Your Email" class="w-full bg-gray-100 border-2 border-gray-300 rounded-lg p-3 focus:border-accent outline-none transition-colors text-gray-800" required>
+                <textarea name="message" placeholder="Your Message" rows="4" class="w-full bg-gray-100 border-2 border-gray-300 rounded-lg p-3 focus:border-accent outline-none transition-colors text-gray-800" required></textarea>
+                <button type="submit" class="btn btn-primary w-full">Send Message</button>
+            </form>
+            <div id="modal-form-status" class="mt-4 text-center"></div>
+        </div>
+    </div>
+</div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script src="contact.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  emailjs.init({
+    publicKey: "yBYCQCC9dS_cvBzs6",
+    blockHeadless: false,
+  });
+</script>
+
 </html>

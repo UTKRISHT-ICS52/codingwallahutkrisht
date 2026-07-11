@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // A helper function to safely add event listeners
+
     function safeAddEventListener(selector, event, handler) {
         const element = document.getElementById(selector);
-        // This is the guard clause: only add listener if element exists
         if (element) {
             element.addEventListener(event, handler);
         } else {
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('mobile-menu')?.classList.toggle('hidden');
     });
 
-    // --- Header scroll effect ---
+    // --- Header Scroll Effect ---
     const header = document.getElementById('header');
     if (header) {
         window.addEventListener('scroll', () => {
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- GSAP Scroll Animations (if you are using it) ---
+    // --- GSAP Scroll Animations ---
     if (typeof gsap !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
         const sections = document.querySelectorAll('.section-hidden');
@@ -43,7 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Contact Modal Logic (NOW MORE ROBUST) ---
+    // --- EmailJS Init ---
+
+
+    // --- Contact Modal Logic ---
     const contactModal = document.getElementById('contact-modal');
 
     function openModal(e) {
@@ -61,95 +63,104 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
-    // contact.js
-// 1. INIT EmailJS (page load pe)
-emailjs.init("yBYCQCC9dS_cvBzs6"); // <-- apni Public Key
-
-// 2. Form submit handle
-const form = document.getElementById("contact-form");
-const btn = document.getElementById("send-btn");
-const status = document.getElementById("status-msg");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  btn.disabled = true;
-  btn.innerText = "Sending...";
-  status.innerText = "";
-
-  emailjs
-    .send("service_ie5htsq", "template_5ztkwno", {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-    })
-    .then(
-      function (response) {
-        console.log("SUCCESS!", response.status, response.text);
-
-        btn.innerText = "Send Message";
-        btn.disabled = false;
-
-        status.style.color = "green";
-        status.innerText = "✅ Message sent successfully!";
-        form.reset();
-      },
-      function (error) {
-        console.error("FAILED...", error);
-
-        btn.innerText = "Send Message";
-        btn.disabled = false;
-
-        status.style.color = "red";
-        status.innerText = "❌ Failed to send message";
-      }
-    );
-});
-
-    // Safely add listeners for all buttons that open/close the modal
+    // Modal open/close buttons
     safeAddEventListener('open-contact-modal', 'click', openModal);
     safeAddEventListener('hero-contact-button', 'click', openModal);
-    safeAddEventListener('close-contact-modal', 'click', closeModal); // This will now only work if the ID is correct
+    safeAddEventListener('close-contact-modal', 'click', closeModal);
     safeAddEventListener('open-contact-modal-mobile', 'click', (e) => {
         e.preventDefault();
         document.getElementById('mobile-menu')?.classList.add('hidden');
         openModal();
     });
 
-    // Add listener for clicking the modal background to close
+    // Close modal on background click
     if (contactModal) {
         contactModal.addEventListener('click', (e) => {
-            // Closes modal only if the click is on the dark background itself
-            if (e.target === contactModal) {
-                closeModal();
-            }
+            if (e.target === contactModal) closeModal();
         });
     }
 
-    // --- Form Submission Logic (Unchanged but included for completeness) ---
-    async function handleFormSubmission(formId, statusId) {
-        const form = document.getElementById(formId);
-        const formStatus = document.getElementById(statusId);
-        if (!form || !formStatus) return;
+    // --- Main Page Contact Form ---
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
 
-        form.addEventListener('submit', async (e) => {
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            formStatus.textContent = 'Sending...';
-            // ... rest of your form submission logic
+
+            const submitBtn = contactForm.querySelector("button[type='submit']");
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Sending...";
+            if (formStatus) formStatus.innerText = "";
+
+            emailjs.send("service_ie5htsq", "template_5ztkwno", {
+                name: contactForm.querySelector("[name='name']").value,
+                email: contactForm.querySelector("[name='email']").value,
+                message: contactForm.querySelector("[name='message']").value,
+            }).then(function() {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Send Message";
+                if (formStatus) {
+                    formStatus.style.color = "green";
+                    formStatus.innerText = "✅ Message sent successfully!";
+                }
+                contactForm.reset();
+            }, function(error) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Send Message";
+                if (formStatus) {
+                    formStatus.style.color = "red";
+                    formStatus.innerText = "❌ Failed to send. Try again!";
+                }
+                console.error("EmailJS Error:", error);
+            });
         });
     }
 
-    handleFormSubmission('contact-form', 'form-status');
-    handleFormSubmission('modal-contact-form', 'modal-form-status');
+    // --- Modal Contact Form ---
+    const modalForm = document.getElementById('modal-contact-form');
+    const modalStatus = document.getElementById('modal-form-status');
 
-    // --- Scroll-to-top button logic ---
+    if (modalForm) {
+        modalForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = modalForm.querySelector("button[type='submit']");
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Sending...";
+            if (modalStatus) modalStatus.innerText = "";
+
+            emailjs.send("service_ie5htsq", "template_5ztkwno", {
+                name: modalForm.querySelector("[name='name']").value,
+                email: modalForm.querySelector("[name='email']").value,
+                message: modalForm.querySelector("[name='message']").value,
+            }).then(function() {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Send Message";
+                if (modalStatus) {
+                    modalStatus.style.color = "green";
+                    modalStatus.innerText = "✅ Message sent successfully!";
+                }
+                modalForm.reset();
+            }, function(error) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Send Message";
+                if (modalStatus) {
+                    modalStatus.style.color = "red";
+                    modalStatus.innerText = "❌ Failed to send. Try again!";
+                }
+                console.error("EmailJS Error:", error);
+            });
+        });
+    }
+
+    // --- Scroll To Top ---
     safeAddEventListener('scroll-to-top', 'click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     const scrollToTopBtn = document.getElementById('scroll-to-top');
-    if(scrollToTopBtn) {
+    if (scrollToTopBtn) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 200) {
                 scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
@@ -158,11 +169,13 @@ form.addEventListener("submit", function (e) {
             }
         });
     }
+
 });
-// Add hero-avatar class to the hero image after DOM loads
-    document.addEventListener('DOMContentLoaded', function() {
-        var heroImg = document.querySelector('#home img');
-        if (heroImg) {
-            heroImg.classList.add('hero-avatar');
-        }
-    });
+
+// --- Hero Avatar ---
+document.addEventListener('DOMContentLoaded', function() {
+    var heroImg = document.querySelector('#home img');
+    if (heroImg) {
+        heroImg.classList.add('hero-avatar');
+    }
+});
