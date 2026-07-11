@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // contact.js
 // 1. INIT EmailJS (page load pe)
-emailjs.init("5gcyN0tAlMcltdkzv"); // <-- apni Public Key
+emailjs.init("yBYCQCC9dS_cvBzs6"); // <-- apni Public Key
 
 // 2. Form submit handle
 const form = document.getElementById("contact-form");
@@ -79,7 +79,7 @@ form.addEventListener("submit", function (e) {
   status.innerText = "";
 
   emailjs
-    .send("service_bfelah9", "YOUR_TEMPLATE_ID", {
+    .send("service_ie5htsq", "template_5ztkwno", {
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
       message: document.getElementById("message").value,
